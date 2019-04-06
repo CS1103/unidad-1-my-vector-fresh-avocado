@@ -2,12 +2,13 @@
 #include <vector>
 #include <cassert>
 
+#include "Vector.h"
 
 int main() {
 
     // Creando vectores
     std::vector<int> vec1;
-    UTEC::vector vec2;
+    Vector vec2;
 
     // Agregando datos
     for (int i = 0; i < 100; ++i) {

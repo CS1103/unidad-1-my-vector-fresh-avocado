@@ -5,18 +5,41 @@
 #ifndef MYVECTOR_MYVECTOR_H
 #define MYVECTOR_MYVECTOR_H
 
-class vector {
-    int* _arr;
-    int _size;
+// Item
+
+struct Item {
+    int value;
+    Item* next;
+
+    Item(int value): value{value}, next{nullptr} {}
+};
+
+// Vector
+
+class Vector {
+    Item* head;
+    Item* tail;
 
 public:
-    vector();
-    ~vector();
-    void push_back(const int& value);
+
+    Vector(): head{nullptr}, tail{nullptr} {}
+    ~Vector();
+
+    void push_first(int newFirst);
+    void push_back(int newLast);
+
+    void pop_first();
     void pop_back();
+
+    bool empty();
+
+    int get_first();
+    int get_last();
+    int get_item(unsigned int i); // returns 0 of size is 0
     void insert(int pos, const int& value);
-    int get_item(int i);
-    int size();
+
+    void print();
+    unsigned int size();
 };
 
 
